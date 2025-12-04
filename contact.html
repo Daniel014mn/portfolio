@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+  Student Name: Daniel Mendivil
+  File Name: contact.html
+  Date: 12/03/2025
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192.png">
+
+  <title>Contact Me - Daniel Mendivil</title>
+  <meta name="description" content="Contact Daniel Mendivil for questions, collaboration, or feedback about my programming and web development work.">
+  <link href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Contact Me</h1>
+    <h2>Let's Connect</h2>
+  </header>
+
+    <!-- nav -->
+    <nav id="main-nav">
+      <button id="hamburger">&#9776;</button>
+      <ul id="main-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+
+  <!-- Main Section-->
+  <main>
+    <h2>Get in Touch</h2>
+    <p>Email: <a href="mailto:daniel@example.com">daniel@example.com</a></p>
+    <p>Phone: <a class="phone-animate" href="tel:+17206807928">(720) 680-7928</a></p>
+
+    <div aria-labelledby="contact-form-title">
+      <h3 id="contact-form-title" class="visually-hidden">Contact Form</h3>
+
+      <form class="appointment-form" action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Your Information</legend>
+
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Message Details</legend>
+
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option value="general">General Question</option>
+            <option value="project">Project Inquiry</option>
+            <option value="availability">Availability</option>
+          </select>
+
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="How can I help?"></textarea>
+        </fieldset>
+
+        <input type="submit" class="btn" value="Send">
+      </form>
+    </div>
+  </main>
+  
+  <!--Footer-->
+  <footer>
+    <p>&copy; 2025 Daniel Mendivil. All rights reserved.</p>
+
+    <div class="footer-icons">
+      <a href="https://github.com/Daniel014mn" target="_blank">
+          <img src="images/github.png" alt="GitHub Logo">
+      </a>
+      <a href="https://instagram.com/daniel_mn14" target="_blank">
+          <img src="images/instagram.png" alt="Instagram Logo">
+      </a>
+  </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="scripts/script.js"></script>
+
+</body>
+</html>

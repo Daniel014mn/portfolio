@@ -1,0 +1,431 @@
+/*
+Student Name: Daniel Mendivil
+File Name: styles.css
+Date: 11/16/2025
+*/
+
+/* CSS Reset */
+body, header, nav, main, footer, h1, h2, h3, p, ul, li, img, figure {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Style rule for body */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: linear-gradient(to right, #cce6f4, #003366);
+  color: #0a1a2f;
+  line-height: 1.5;
+}
+
+/* Style rules for header */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Style rules for navigation area */
+nav {
+  background-color: #1d396d;
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 0.75em;
+}
+
+nav a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: .55em 1em;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover, focus, and active for nav links */
+nav a:hover {
+  color: #1d396d;
+  background-color: #cce6f4;
+}
+
+nav a:focus {
+  outline: 3px solid #cce6f4;
+  outline-offset: 2px;
+}
+
+nav a:active {
+  transform: translateY(1px);
+}
+
+/* Style rules for main content */
+main {
+  background: #fff;
+  padding: 2rem 1rem;
+}
+
+/* General link styles */
+a {
+  color: #004aad;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #003366;
+  text-shadow: 0 0 5px rgba(0, 51, 102, 0.3);
+  text-decoration: underline;
+}
+
+/* Style rule for footer */
+footer {
+  background-color: #1d396d;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Footer phone link (red number) */
+footer a[href^="tel"] {
+  color: #cc0000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+footer a[href^="tel"]:hover {
+  color: #ff4d4d;
+  text-decoration: underline;
+}
+
+/* Mobile default visibility */
+.mobile { display: block; }
+.tablet-desktop { display: none; }
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 600px), print {
+  .mobile { display: none; }
+  .tablet-desktop { display: block; }
+
+  nav li { 
+    display: inline-block; 
+    margin: 0 .6em; 
+  }
+
+  nav a { 
+    border-radius: 0; 
+    padding: .5em 1em; 
+  }
+
+  .left { float: left; width: 48%; }
+  .right { float: right; width: 48%; }
+  .clear { clear: both; }
+}
+
+/* Media Query for Desktop Viewport */
+@media screen and (min-width: 900px), print {
+  header { 
+    width: 25%; 
+    float: left; 
+    text-align: left; 
+  }
+
+  nav { 
+    margin-left: 25%; 
+  }
+
+  nav ul { 
+    text-align: right; 
+  }
+
+  main { 
+    clear: both; 
+    overflow: auto; 
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /* Multi-column layout for lists inside main */
+  main ul {
+    columns: 2;
+    column-gap: 2rem;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  footer { clear: left; }
+}
+
+/* Media Query for Large Desktop Viewport */
+@media screen and (min-width: 1441px) {
+  main {
+    max-width: 1440px;
+  }
+}
+
+/* Media Query for Print */
+@media print {
+  body { 
+    background: #fff; 
+    color: #000; 
+  }
+  nav, footer { 
+    display: none !important; 
+  }
+  .tablet-desktop { 
+    display: block !important; 
+  }
+  main { 
+    width: 100%; 
+    margin: 0; 
+    padding: 0; 
+  }
+  a { 
+    color: #000; 
+    text-decoration: underline; 
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; clip-path: inset(50%);
+}
+
+/* Table + mobile list */
+.service-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem auto;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.service-table caption {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #003366;
+  margin-bottom: .5rem;
+}
+.service-table th, .service-table td {
+  padding: .75rem;
+  border: 1px solid #cce6f4;
+  text-align: left;
+}
+.service-table thead th {
+  background-color: #e6f1fa;
+  color: #003366;
+}
+.service-table tbody tr:nth-child(odd) {
+  background-color: #f8fbfd;
+}
+.mobile-service-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+}
+.mobile-service-list li {
+  padding: .75rem;
+  border: 1px solid #cce6f4;
+  background: #ffffff;
+  border-radius: 6px;
+  margin-bottom: .5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.service-table { display: none; }
+
+@media (min-width: 600px) {
+  .service-table { display: table; }
+  .mobile-service-list { display: none; }
+}
+
+@media (min-width: 900px) {
+  .service-table th:first-child,
+  .service-table td:first-child { width: 30%; }
+  .service-table th:last-child,
+  .service-table td:last-child { width: 15%; text-align: right; }
+}
+
+/* Form */
+.appointment-form {
+  width: 100%;
+  margin: 2rem 0;
+}
+.appointment-form fieldset {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #cce6f4;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.appointment-form legend {
+  font-weight: 700;
+  color: #003366;
+  padding: 0 .25rem;
+}
+.appointment-form label {
+  display: block;
+  margin-top: .75rem;
+  margin-bottom: .25rem;
+}
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+  width: 100%;
+  padding: .65rem .75rem;
+  border: 1px solid #99c2e0;
+  border-radius: 4px;
+  font-family: inherit;
+  background: #f8fafc;
+}
+.appointment-form .btn {
+  border: none;
+  background: #003366;
+  color: #fff;
+  padding: .9rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  display: block;
+  margin: 1rem auto 0;
+}
+@media (min-width: 600px) {
+  .appointment-form {
+    width: 80%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+  }
+  .appointment-form fieldset { margin: 0; }
+  .appointment-form .btn {
+    grid-column: 1 / span 2;
+    padding: .85rem 1.15rem;
+  }
+}
+@media (min-width: 900px) {
+  .appointment-form { width: 70%; }
+}
+
+/* video (background utility from earlier weeks) */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.25; 
+}
+
+/* video */
+.media-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;    
+  margin-top: 2rem;
+  flex-wrap: wrap;  
+}
+
+.media-container img {
+  max-width: 55%;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.media-container video {
+  max-width: 35%;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* HAMBURGER BUTTON */
+#hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* @keyframes */
+@keyframes groomPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.cta-animate {
+  animation: groomPulse 2.6s infinite ease-in-out;
+}
+
+@media (max-width: 640px) {
+  #hamburger {
+    display: block;
+    margin: .5rem auto;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul.open {
+    display: block;
+    animation: groomFade .35s ease-in-out;
+  }
+}
+
+@keyframes groomFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Phone animation*/
+@keyframes glowGreen {
+  0% {
+      color: #00b300;
+      text-shadow: 0 0 5px #00ff66;
+  }
+  50% {
+      color: #00ff66;
+      text-shadow: 0 0 12px #00ff99, 0 0 20px #00ff99;
+  }
+  100% {
+      color: #00b300;
+      text-shadow: 0 0 5px #00ff66;
+  }
+}
+
+.phone-animate {
+  animation: glowGreen 1.6s ease-in-out infinite;
+  font-weight: bold;
+}
+
+.footer-icons img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
